@@ -12,8 +12,9 @@ class Deck{
         vector<Card> decks;
     public:
         Deck();
+        int size();
         void shuffleDeck(); //shuffle deck
-        void dealCard(); //should deal a card and remove card
+        Card dealCard(); //should deal a card and remove card
 
 };
 

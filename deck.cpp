@@ -8,6 +8,7 @@
 using namespace std;
 
 Deck::Deck(){
+    srand(time(0)); //creates a random seed dependent on time
     vector<Card> tempDeck;
     for(int i = 0; i < Card::cardsPerSuit; ++i){
         for(int j = 0; j < Card::totalSuit; ++j){
@@ -27,17 +28,16 @@ void Deck::shuffleDeck(){ //shuffles the deck
 
    }
 }
-void Deck::dealCard(){ //right now all this does is output the cards
-    for(int i = 0; i < 52; ++i){
-        cout << this->decks[i] << endl;
-    }
+Card Deck::dealCard(){ //right now all this does is output the cards
+    Card temp = decks[0];
+    cout << "Drawing card " << endl;
+    decks.erase(decks.begin()+0);
+    cout << "Deck size is now " << decks.size() << endl;
+    return temp;
 
 }
-int main(){
-    srand(time(0)); //creates a random seed dependent on time
-    Deck theDeck; //creates a new deck of 52 cards
-    theDeck.shuffleDeck(); //shuffles the deck to have random values
-    theDeck.dealCard(); //right now outputs all the cards
-
+int Deck::size(){
+    return decks.size();
 }
+
 
