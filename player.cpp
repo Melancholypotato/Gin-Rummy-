@@ -27,14 +27,8 @@ void Player::add_card(Card c)
     hand.push_back(c);
 }
 
-						//How many cards each player draw each new game
-/*
-void Player::FirstHand(Deck *target) {
-	for (int k = 0; k < 7; k++) {
-		hand.push_back(target->drawCard());                 <--------------NOTE: This function is included within the 'Deck's' header file.
-	}
-}
-*/
+						
+
 							//Show the Players cards
 void Player::ViewHand() 
 {
